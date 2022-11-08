@@ -1,3 +1,5 @@
+import { NavigatorScreenParams } from '@react-navigation/native'
+
 export type RootStackParamList = {
   MealsCategories: undefined
   MealsOverview: { categoryId: string }
@@ -5,6 +7,6 @@ export type RootStackParamList = {
 }
 
 export type RootDrawerParamList = {
-  Categories: undefined
+  Categories: NavigatorScreenParams<RootStackParamList>
   Favorites: undefined
 }

@@ -4,9 +4,14 @@ import { FlatList, ListRenderItem } from 'react-native'
 import CategoryGridTile from '../components/CategoryGridTile'
 import { CATEGORIES } from '../data'
 import Category from '../models/category'
-import { RootStackParamList } from '../common/types'
+import { RootDrawerParamList, RootStackParamList } from '../common/types'
+import { CompositeScreenProps } from '@react-navigation/native'
+import { DrawerScreenProps } from '@react-navigation/drawer'
 
-type Props = NativeStackScreenProps<RootStackParamList, 'MealsCategories'>
+type Props = CompositeScreenProps<
+  DrawerScreenProps<RootDrawerParamList, 'Categories'>,
+  NativeStackScreenProps<RootStackParamList, 'MealsCategories'>
+>
 
 const CategoriesScreen: React.FC<Props> = ({ navigation }) => {
   const onPress = (categoryId: string) =>
