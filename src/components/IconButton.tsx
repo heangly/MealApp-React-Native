@@ -1,7 +1,11 @@
 import { Pressable, StyleSheet } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
-type Props = { icon: 'star'; color: string; onPress: () => void }
+type Props = {
+  icon: 'star' | 'star-outline'
+  color: string
+  onPress: () => void
+}
 
 const IconButton: React.FC<Props> = ({ icon, color, onPress }) => {
   return (
